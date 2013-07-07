@@ -1,0 +1,857 @@
+<!DOCTYPE html><html><head><title>Python for Random People</title><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" /><style type='text/css'>
+body {
+  font-family: 'Helvetica';
+  letter-spacing:-5px;
+  background:#000;
+  background-size:100%;
+  color:#fff;
+  margin:0;
+  padding:0;
+  font-weight:bold;
+}
+
+h1, h2, h3, p {
+  margin:0;
+}
+
+em, a {
+  font-style:normal;
+  color:#8dbd0c;
+}
+
+a {
+  background: #34d0e7;
+  color:#000;
+  text-decoration:none;
+}
+
+img {
+  width:100%;
+}
+
+div {
+  cursor:pointer;
+  cursor:hand;
+  position:absolute;
+  top:0;
+  left:0;
+}
+</style><script type='text/javascript'>
+window.onload = function() {
+    var s = document.getElementsByTagName('div'), cur = 0;
+    if (!s) return;
+    function go(n) {
+        cur = n;
+        var i = 1e3, e = s[n];
+        for (var k = 0; k < s.length; k++) s[k].style.display = 'none';
+        e.style.display = 'inline';
+        e.style.fontSize = i + 'px';
+        if (e.firstChild.nodeName === 'IMG') {
+            document.body.style.backgroundImage = 'url(' + e.firstChild.src + ')';
+            e.firstChild.style.display = 'none';
+            document.body.style.backgroundRepeat = 'no-repeat';
+        } else {
+            document.body.style.backgroundImage = '';
+            document.body.style.backgroundColor = e.style.backgroundColor;
+        }
+        while (
+            e.offsetWidth > window.innerWidth ||
+            e.offsetHeight > window.innerHeight) {
+            e.style.fontSize = (i -= 10) + 'px';
+            if (i < 0) break;
+        }
+        e.style.marginTop = ((window.innerHeight - e.offsetHeight) / 2) + 'px';
+        if (window.location.hash !== n) window.location.hash = n;
+        document.title = e.textContent || e.innerText;
+    }
+    document.onclick = function() {
+        go(++cur % (s.length));
+    };
+    document.onkeydown = function(e) {
+        (e.which === 39) && go(Math.min(s.length - 1, ++cur));
+        (e.which === 37) && go(Math.max(0, --cur));
+    };
+    function parse_hash() {
+        return Math.max(Math.min(
+            s.length - 1,
+            parseInt(window.location.hash.substring(1), 10)), 0);
+    }
+    if (window.location.hash) cur = parse_hash() || cur;
+    window.onhashchange = function() {
+        var c = parse_hash();
+        if (c !== cur) go(c);
+    };
+
+    go(cur);
+};
+</script></head><body>
+
+<div>time to learn <em>python</em></div>
+<div><em>random</em> python for <em>random</em> people</div>
+<div>python has this thing called the interpreter</div>
+<div><img src="images/interpreter.jpg" /></div>
+<div>you type stuff into it</div>
+<div><img src="images/interpreter_with_stuff.jpg" /></div>
+<div>not that kind of stuff</div>
+<div>python is a programming language</div>
+<div>which means...</div>
+<div>you type stuff into the interpreter in the python language</div>
+<div><img src="images/python_stuff.jpg" /></div>
+<div>good job!</div>
+<div>so let's start with some basic ideas</div>
+<div>python as a calculator</div>
+<div><img src="images/2plus2.jpg" /></div>
+<div>WHOA!!!! 2 + 2 = 4!</div>
+<div>!!!</div>
+<div>wait a minute...</div>
+<div><img src="images/basic_math.jpg" /></div>
+<div>!!!</div>
+<div><img src="images/fascinating.jpg" /></div>
+<div>what is this...</div>
+<div><img src="images/who_are_you_really.jpg" /></div>
+<div><img src="images/oh_no_its_math_class.jpg" /></div>
+<div>WAIT!</div>
+<div>THERE'S MORE!</div>
+<div>...anyways...</div>
+<div>assert?</div>
+<div>we are going to use assert</div>
+<div><img src="images/assert_syntax_error.jpg" /></div>
+<div>well that didn't work...</div>
+<div>let's try that again</div>
+<div><img src="images/basic_assert.jpg" /></div>
+<div>it worked!</div>
+<div><img src="images/assert_it_worked.jpg" /></div>
+<div>see even this presentation can learn python!</div>
+<div>side note: "=" is for assignment, "==" is used for comparison</div>
+<div>but we'll get into that stuff later...</div>
+<div>assert is used to check that something works the way you want it to</div>
+<div>for example...</div>
+<div><img src="images/assert_5.jpg" /></div>
+<div>we got an error because 2 + 2 does NOT equal 5</div>
+<div>python has an easy way to deal with things that are not equal</div>
+<div>not</div>
+<div><img src="images/assert_not.jpg" /></div>
+<div>if we translate this to english...</div>
+<div>2 + 2 is not equal to 5</div>
+<div>remember we are working in a different language here</div>
+<div>ok so python can do basic math</div>
+<div>what else can we do with it?</div>
+<div>...</div>
+<div>more math stuff!!</div>
+<div><img src="images/more_math_stuff.jpg" /></div>
+<div><img src="images/orly.jpg" /></div>
+<div><img src="images/you_really_like_math_dont_you.jpg" /></div>
+<div>NO NEED TO FEAR!</div>
+<div><img src="images/we_will_succeed.jpg" /></div>
+<div>besides</div>
+<div>it's just variables</div>
+<div><img src="images/ais1.jpg" /></div>
+<div>that's not so bad</div>
+<div><img src="images/rawr_is_over_9000.jpg" /></div>
+<div>variables act as what you assign to them</div>
+<div><img src="images/variable_assert.jpg" /></div>
+<div>you can name variables after your pets</div>
+<div><img src="images/animal_names.jpg" /></div>
+<div>you can even assert with variables!</div>
+<div><img src="images/animal_asserts.jpg" /></div>
+<div>variables can be words too!</div>
+<div><img src="images/werd.jpg" /></div>
+<div>did you know you can add words?</div>
+<div><img src="images/add_words.jpg" /></div>
+<div>what is this?</div>
+<div>what is this?????</div>
+<div>what is this??????????</div>
+<div>what is this???????????????</div>
+<div><img src="images/who_are_you_really.jpg" /></div>
+<div><img src="images/hello_python.jpg" /></div>
+<div>that adding doe</div>
+<div><img src="images/crazy_stuff.jpg" /></div>
+<div>let's assert that</div>
+<div><img src="images/oopsie_assert.jpg" /></div>
+<div>uh oh what went wrong?</div>
+<div><img src="images/oopsie_assert.jpg" /></div>
+<div>we forgot an apostrophe</div>
+<div><img src="images/fixed_assert.png" /></div>
+<div>so on the topic of variables...</div>
+<div>we can do stuff like:</div>
+<div><img src="images/variable_mult.jpg" /></div>
+<div>what if we want to dynamically change a variable?</div>
+<div><img src="images/dynamic_change.jpg" /></div>
+<div>so now what does x equal?</div>
+<div><img src="images/x_assert.jpg" /></div>
+<div>to check the value of x we could also just type "x"</div>
+<div><img src="images/type_x.jpg" /></div>
+<div>programmers are lazy though</div>
+<div>typing "x=2*x" is hard work</div>
+<div>there is an easier way to do something like this</div>
+<div><img src="images/inline_assignment.jpg" /></div>
+<div>WOWOWOWOWOW NOOOO NO NO NO THAT'S CHEATING</div>
+<div>show me again :D</div>
+<div><img src="images/inline_assignment.jpg" /></div>
+<div>so what does x equal now?</div>
+<div><img src="images/show_x.jpg" /></div>
+<div><img src="images/who_are_you_really.jpg" /></div>
+<div><img src="images/more_inline_assignments.jpg" /></div>
+<div><img src="images/oh_no_its_math_class.jpg" /></div>
+<div><img src="images/more_more_inline.jpg" /></div>
+<div><img src="images/more_math_stuff.jpg" /></div>
+<div><img src="images/you_really_like_math_dont_you.jpg" /></div>
+<div><img src="images/y_u_no_interesting.jpg" /></div>
+<div><img src="images/vy_vu_no_vinterzezting.jpg" /></div>
+<div style="color: red">teehee</div>
+<div>don't worry!</div>
+<div>this can be used for more than math stuff!</div>
+<div><img src="images/orly.jpg" /></div>
+<div>remember adding words?</div>
+<div><img src="images/inline_word_add.jpg" /></div>
+<div><img src="images/who_are_you_really.jpg" /></div>
+<div><img src="images/word_inline_add.jpg" /></div>
+<div>ok well that's kind of cool</div>
+<div>but can it <em>SUBTRACT?</em></div>
+<div><img src="images/word_inline_minus.png" /></div>
+<div>alas :(</div>
+<div>hark!!</div>
+<div>there is another thingy that can do this!</div>
+<div><img src="images/orly.jpg" /></div>
+<div>F</div>
+<div><img src="images/orly.jpg" /></div>
+<div>FU</div>
+<div><img src="images/orly.jpg" /></div>
+<div>FUN</div>
+<div>FUN!</div>
+<div><img src="images/orly.jpg" /></div>
+<div>FUN</div>
+<div>FUNC</div>
+<div>FUNCT</div>
+<div>FUNCTI</div>
+<div>FUNCTIO</div>
+<div>FUNCTION</div>
+<div>FUNCTIONS</div>
+<div>FUNCTIONS!!!</div>
+<div><img src="images/ur_silly.jpg" /></div>
+<div>functions.</div>
+<div><img src="images/hidden_menu.png" /></div>
+<div><img src="images/what_is_this_i_dont_even.jpg" /></div>
+<div><img src="images/hidden_menu_again.jpg" /></div>
+<div><img src="images/who_are_you_really.jpg" /></div>
+<div><img src="images/hidden_menu_again.jpg" /></div>
+<div>to reveal the hidden menu thing press ctrl + spacebar</div>
+<div>scroll down using the mouse or the arrow keys</div>
+<div>scroll down</div>
+<div>I dare you</div>
+<div><img src="images/swap_case.jpg" /></div>
+<div>hey look a thing</div>
+<div><img src="images/hey_look_theres_a_thing.jpg" /></div>
+<div><img src="images/swap_case.jpg" /></div>
+<div>how can I make it work?</div>
+<div><img src="images/swap_case_wrong.jpg" /></div>
+<div><img src="images/swap_case_doin_it_wrong.jpg" /></div>
+<div>hmmm...</div>
+<div>functions must be called</div>
+<div>so:</div>
+<div><img src="images/call_me_maybe.jpg" /></div>
+<div>no</div>
+<div><img src="images/swap_case_call.jpg" /></div>
+<div>aha!</div>
+<div><img src="images/swap_case_call.jpg" /></div>
+<div>to call a function, you type the function and add () at the end</div>
+<div><img src="images/swap_case_call.jpg" /></div>
+<div><img src="images/what_is_this_i_dont_even.jpg" /></div>
+<div>don't worry we'll get into it more later</div>
+<div>...</div>
+<div>hey look it's later</div>
+<div><img src="images/hey_look_theres_a_thing.jpg" /></div>
+<div>so functions</div>
+<div>what is a function?</div>
+<div><img src="images/swap_case_call.jpg" /></div>
+<div>in this case the function is swapcase</div>
+<div>so let's contemplate life</div>
+<div>word is a variable, it holds the value 'hello'</div>
+<div>well what is 'hello'?</div>
+<div>it's a <em>string</em></div>
+<div><img src="images/type_of_word.jpg" /></div>
+<div><img src="images/what_is_this_i_dont_even.jpg" /></div>
+<div>in programming we have these things called <em>types</em></div>
+<div>to check the type of something you use a function called "type"</div>
+<div>remember how to call a function?</div>
+<div><img src="images/ur_silly.jpg" /></div>
+<div><img src="images/type_num.jpg" /></div>
+<div>whoa there.</div>
+<div>what's that 1 doing inbetween those parentheses?</div>
+<div><img src="images/type_num.jpg" /></div>
+<div>the 1 is the <em>argument</em> we are giving to "type"</div>
+<div><img src="images/type_num.jpg" /></div>
+<div>ok so the type of "1" is "int"</div>
+<div>whatever that is</div>
+<div><img src="images/type_str.jpg" /></div>
+<div>'hi' is a "str"</div>
+<div><img src="images/type_lol.jpg" /></div>
+<div><img src="images/what_is_this_i_dont_even.jpg" /></div>
+<div><img src="images/type_lol.jpg" /></div>
+<div><img src="images/who_are_you_really.jpg" /></div>
+<div><img src="images/type_lol.jpg" /></div>
+<div><img src="images/type_lol_inception.jpg" /></div>
+<div>so now that we understand inception</div>
+<div>let's play a game!</div>
+<div>there are 3 primary types we need to worry about</div>
+<div><img src="images/3_types.jpg" /></div>
+<div>give me an <em>int</em>!</div>
+<div><img src="images/int_type.jpg" /></div>
+<div>give me a <em>string</em>!</div>
+<div><img src="images/str_type.jpg" /></div>
+<div>give me a <em>list</em>!</div>
+<div><img src="images/list_type.jpg" /></div>
+<div>so now what?</div>
+<div><img src="images/hey_look_theres_a_thing.jpg" /></div>
+<div>well this is all handy and dandy but...</div>
+<div>how do you actually do stuff?</div>
+<div><img src="images/how_to_do_stuff.jpg" /></div>
+<div>python has these cool things called modules</div>
+<div>to use a module, you use the "import" keyword</div>
+<div><img src="images/import_fail.jpg" /></div>
+<div>you have to import <em>something</em></div>
+<div>let's import something random</div>
+<div><img src="images/import_random.jpg" /></div>
+<div>!!!</div>
+<div><img src="images/import_random.jpg" /></div>
+<div>it worked!</div>
+<div><img src="images/import_random.jpg" /></div>
+<div>hey look mah, random!</div>
+<div><img src="images/state_random.jpg" /></div>
+<div><img src="images/fascinating.jpg" /></div>
+<div>remember how we could use a function on a variable?</div>
+<div><img src="images/ur_silly.jpg" /></div>
+<div><img src="images/swap_case_call.jpg" /></div>
+<div>and that hidden menu thingy</div>
+<div><img src="images/hidden_menu_again.jpg" /></div>
+<div><img src="images/not_sure_if_stuck_on_repeat_or_trying_to_tell_me_something.jpg" /></div>
+<div>let's try it!</div>
+<div>remember, ctrl + spacebar</div>
+<div><img src="images/random_hidden_menu.png" /></div>
+<div><img src="images/what_is_this_i_dont_even.jpg" /></div>
+<div><img src="images/random_hidden_menu.png" /></div>
+<div>okay what is this craziness</div>
+<div><img src="images/who_are_you_really.jpg" /></div>
+<div><img src="images/random_hidden_menu.png" /></div>
+<div>so random is a module we imported, and it has...</div>
+<div>functions?</div>
+<div>well let's try one</div>
+<div><img src="images/random_tooltip.jpg" /></div>
+<div><img src="images/hey_look_theres_a_thing.jpg" /></div>
+<div><img src="images/random_tooltip.jpg" /></div>
+<div>it's giving us a hint</div>
+<div><img src="images/random_tooltip.jpg" /></div>
+<div>so random.random() <em>returns</em> a number between 0 and 1</div>
+<div><img src="images/random_random.jpg" /></div>
+<div>hey there are other functions in there too!</div>
+<div><img src="images/hey_look_theres_a_thing.jpg" /></div>
+<div>let's try random.randint</div>
+<div><img src="images/rand_int.jpg" /></div>
+<div>this function takes <em>arguments</em></div>
+<div>remember those thingies?</div>
+<div><img src="images/type_num.jpg" /></div>
+<div>the 1 is the <em>argument</em> we are giving to "type"</div>
+<div>so for random.randint</div>
+<div><img src="images/rand_int.jpg" /></div>
+<div>we need to give it two arguments</div>
+<div><img src="images/rand_int.jpg" /></div>
+<div><img src="images/randint_call.jpg" /></div>
+<div>ok got it.</div>
+<div>you know what would make this better?</div>
+<div>...</div>
+<div>:D</div>
+<div><img src="images/more_math_stuff.jpg" /></div>
+<div><img src="images/import_math.jpg" /></div>
+<div><img src="images/hey_look_theres_a_thing.jpg" /></div>
+<div><img src="images/math_menu.jpg" /></div>
+<div><img src="images/oh_no_its_math_class.jpg" /></div>
+<div>NOT TO WORRY!</div>
+<div>you probably haven't learned about most of this math stuff yet</div>
+<div>so we will skip it</div>
+<div><img src="images/success.jpg" /></div>
+<div>so enough about this random stuff</div>
+<div>and enough with this math stuff</div>
+<div>what about subtracting words??</div>
+<div>remember??</div>
+<div>you said we would <em>subtract</em> WORDS!!</div>
+<div>okay so let's review the word thing</div>
+<div><img src="images/word_inline_add.jpg" /></div>
+<div><img src="images/word_inline_minus.png" /></div>
+<div>so apparently there is some way to make this work??</div>
+<div style="color: red">YES!</div>
+<div>well not exactly</div>
+<div><img src="images/subtract_words.jpg" /></div>
+<div>see, this will never work</div>
+<div><img src="images/subtract_words.jpg" /></div>
+<div>and if that doesn't work, then this can't work either</div>
+<div><img src="images/word_minus_equals.jpg" /></div>
+<div>but, we don't have to use -=</div>
+<div>we can make a function that does this!</div>
+<div><img src="images/we_will_succeed.jpg" /></div>
+<div>let's take a look</div>
+<div><img src="images/subtract_words.png" /></div>
+<div><img src="images/what_is_this_i_dont_even.jpg" /></div>
+<div><img src="images/subtract_words.png" /></div>
+<div>okay that looks like gibberish</div>
+<div><img src="images/subtract_words.png" /></div>
+<div>we'll go through it line by line</div>
+<div><img src="images/subtract_words.png" /></div>
+<div>so <em>def</em> means we're starting a function</div>
+<div>what we put after def is the <em>name</em> of the function</div>
+<div>then if we want the function to take arguments</div>
+<div>we put the <em>names of the arguments</em> in parentheses after the name of the function</div>
+<div>and after all of that, we put a colon</div>
+<div><img src="images/subtract_words.png" /></div>
+<div>the colon means that we finished <em>declaring</em> the function</div>
+<div>and that we now want to make it do something</div>
+<div><img src="images/subtract_words.png" /></div>
+<div>so "words" here is the first argument that was given to the function</div>
+<div>remember when we called swapcase() on a variable before?</div>
+<div><img src="images/swap_case_call.jpg" /></div>
+<div>this is the same idea, except we're calling replace</div>
+<div><img src="images/subtract_words.png" /></div>
+<div>so we can see here that replace takes <em>two arguments</em></div>
+<div>the first argument is the <em>string</em> we are looking to replace</div>
+<div>the second argument is the <em>string</em> we want to replace it with</div>
+<div>let's look at an example of replace</div>
+<div><img src="images/hello_bob_replace.png" /></div>
+<div>okay recap on our function</div>
+<div><img src="images/subtract_words.png" /></div>
+<div>we <em>declared</em> a function called "subtract_words"</div>
+<div>it takes two arguments, "words" and "wordtosubtract"</div>
+<div>then it makes a call to <em>replace</em> on the variable called "words"</div>
+<div>and it gives "wordtosubtract" as the first argument</div>
+<div>and "''" as the second argument</div>
+<div>well what's "''"??</div>
+<div><img src="images/subtract_words.png" /></div>
+<div>it's just an <em>empty string</em></div>
+<div>so that means that we are replacing whatever <em>wordtosubtract</em> is</div>
+<div>with nothing</div>
+<div><img src="images/subtract_words.png" /></div>
+<div><img src="images/what_is_this_i_dont_even.jpg" /></div>
+<div>so let's try our function now!</div>
+<div><img src="images/subtract_words_fail.png" /></div>
+<div>well it worked, but nothing happened</div>
+<div><img src="images/subtract_words_fail.png" /></div>
+<div>wait a minute!</div>
+<div><img src="images/subtract_words_fail.png" /></div>
+<div>know what's wrong?</div>
+<div><img src="images/subtract_words_fail.png" /></div>
+<div>in programming there's this thing called <em>print</em></div>
+<div>it's slightly different in every programming language</div>
+<div>but it always does the same thing</div>
+<div>it makes something readable by humans</div>
+<div>remember wayyy back in the beginning of the presentation?</div>
+<div><img src="images/python_stuff.jpg" /></div>
+<div><img src="images/who_are_you_really.jpg" /></div>
+<div>so we need to make our function print something after we call replace</div>
+<div><img src="images/subtract_words_function.png" /></div>
+<div><img src="images/what_is_this_i_dont_even.jpg" /></div>
+<div><img src="images/subtract_words_function.png" /></div>
+<div><img src="images/who_are_you_really.jpg" /></div>
+<div><img src="images/subtract_words_function.png" /></div>
+<div><img src="images/subtract_words_function_inception.png" /></div>
+<div>genius!</div>
+<div><img src="images/subtract_words_function.png" /></div>
+<div>remember when I mentioned briefly about something somewhere <em>returning</em> something?</div>
+<div>so random.random() <em>returns</em> a number between 0 and 1</div>
+<div>well replace <em>returns</em> the string after it does the replacing</div>
+<div>so in our function we are <em>printing</em> what the replace function <em>returned</em> to us</div>
+<div><img src="images/subtract_words_function.png" /></div>
+<div>so let's try it again!</div>
+<div><img src="images/subtract_words_worked.png" /></div>
+<div>:O</div>
+<div><img src="images/subtract_words_worked.png" /></div>
+<div><img src="images/fascinating.jpg" /></div>
+<div>we could also make our function <em>return</em> the new string</div>
+<div><img src="images/subtract_words_return.png" /></div>
+<div>okay well what did that do?</div>
+<div><img src="images/subtract_words_call.png" /></div>
+<div>...</div>
+<div>nothing?</div>
+<div style="color: red">wrong</div>
+<div>there's a difference see</div>
+<div>printing</div>
+<div><img src="images/subtract_words_worked.png" /></div>
+<div>and returning</div>
+<div><img src="images/subtract_words_call.png" /></div>
+<div>let's get technical</div>
+<div><img src="images/oh_no_its_math_class.jpg" /></div>
+<div>okay so starting with printing</div>
+<div><img src="images/subtract_words_print.png" /></div>
+<div>so it printed 'hello' just like it did before</div>
+<div>but what does x equal?</div>
+<div><img src="images/subtract_words_x.png" /></div>
+<div>well that's strange it didn't do anything</div>
+<div>try printing it?</div>
+<div><img src="images/print_x.png" /></div>
+<div>None?</div>
+<div>None????</div>
+<div>what is this??</div>
+<div><img src="images/who_are_you_really.jpg" /></div>
+<div>okay let's check what <em>type</em> it is! that'll get it for sure!</div>
+<div><img src="images/type_x.png" /></div>
+<div>NoneType?</div>
+<div>this means that x does exist, but it doesn't equal anything</div>
+<div>x equals what we call None in python</div>
+<div><img src="images/nonetype.png" /></div>
+<div>ok well why was x None though?</div>
+<div><img src="images/type_x.png" /></div>
+<div>didn't we set it equal to something?</div>
+<div><img src="images/subtract_words_print.png" /></div>
+<div>hark!</div>
+<div>because subtract_words doesn't <em>return</em> anything</div>
+<div>we can't call it and expect it to magically give a variable something</div>
+<div>however...</div>
+<div><img src="images/subtract_words_save.png" /></div>
+<div>with return, now it doesn't show anything</div>
+<div>but...</div>
+<div><img src="images/subtract_words_retx.png" /></div>
+<div><img src="images/success.jpg" /></div>
+<div>so if a function <em>returns</em> something that means we can save it to a variable</div>
+<div>fancy.</div>
+<div>ready to learn more things?</div>
+<div><img src="images/all_the_things.jpg" /></div>
+<div>so let's talk about logic</div>
+<div>logic.</div>
+<div><img src="images/who_are_you_really.jpg" /></div>
+<div>what is logic?</div>
+<div><img src="images/lets_think_about_this_logically.jpg" /></div>
+<div>so logic is logical.</div>
+<div><img src="images/orly.jpg" /></div>
+<div><img src="images/cause_logic.jpg" /></div>
+<div>in programming logic refers to these crazy things called</div>
+<div><em>if statements</em></div>
+<div>in a nutshell</div>
+<div><em>"</em>to be or not to be</div>
+<div>that is the question</div>
+<div>whether 'tis nobler in the mind</div>
+<div>to suffer the slings and arrows of outrageous fortune</div>
+<div>or...<em>"</em></div>
+<div>okay enough Shakespear</div>
+<div>anyways, to be or not to be.</div>
+<div><img src="images/not_sure_if_stuck_on_repeat_or_trying_to_tell_me_something.jpg" /></div>
+<div>so if statements</div>
+<div>what are they?</div>
+<div>in english an if statement would be something like</div>
+<div>if I am hungry I will eat</div>
+<div>well what is that in python?</div>
+<div><img src="images/logic_statement.png" /></div>
+<div><img src="images/what_is_this_i_dont_even.jpg" /></div>
+<div>let's step back a few miles and look at something more simple</div>
+<div><img src="images/simple_if.jpg" /></div>
+<div>okay we know most of this</div>
+<div><img src="images/simple_if.jpg" /></div>
+<div>so the variable <em>i_am</em> equals <em>hungry</em></div>
+<div><img src="images/simple_if.jpg" /></div>
+<div>and then gibberish we don't know about yet</div>
+<div><img src="images/simple_if.jpg" /></div>
+<div>oh and it prints <em>go eat</em></div>
+<div>not so bad</div>
+<div><img src="images/simple_if.jpg" /></div>
+<div>well what about that <em>if</em> thingy?</div>
+<div><img src="images/simple_if.jpg" /></div>
+<div>wait a minute</div>
+<div>that looks like the assert thing we did with the math stuff!</div>
+<div><img src="images/more_math_stuff.jpg" /></div>
+<div><img src="images/basic_assert.jpg" /></div>
+<div>except now instead of assert we have if, and there is a colon at the end of it</div>
+<div><img src="images/simple_if.jpg" /></div>
+<div>well duh!</div>
+<div>it's almost in plain english!!</div>
+<div><img src="images/ur_silly.jpg" /></div>
+<div><img src="images/simple_if.jpg" /></div>
+<div><img src="images/what_is_this_i_dont_even.jpg" /></div>
+<div><img src="images/simple_if.jpg" /></div>
+<div><img src="images/lets_think_about_this_logically.jpg" /></div>
+<div>let's translate line by line</div>
+<div><img src="images/simple_if.jpg" /></div>
+<div>i am hungry</div>
+<div><img src="images/simple_if.jpg" /></div>
+<div>if i am hungry i will</div>
+<div><img src="images/simple_if.jpg" /></div>
+<div>tell myself to go eat</div>
+<div><img src="images/simple_if.jpg" /></div>
+<div>!!!</div>
+<div>it makes sense!</div>
+<div>we know python!</div>
+<div><img src="images/ur_silly.jpg" /></div>
+<div>what about this?</div>
+<div><img src="images/if_else_hungry.jpg" /></div>
+<div>well that makes sense, <em>else</em></div>
+<div><img src="images/if_else_hungry.jpg" /></div>
+<div>note the indentation though</div>
+<div>you need to backspace after the first line that has <em>print</em></div>
+<div>we'll get more into indentation later though</div>
+<div><img src="images/if_else_hungry.jpg" /></div>
+<div>well what if we want to check for multiple things?</div>
+<div>like see if i_am is hungry <em>or</em> thirsty?</div>
+<div><img src="images/lets_think_about_this_logically.jpg" /></div>
+<div><img src="images/go_to_the_kitchen.png" /></div>
+<div><img src="images/what_is_this_i_dont_even.jpg" /></div>
+<div><img src="images/go_to_the_kitchen.png" /></div>
+<div><img src="images/girl_mind=blown.jpg" /></div>
+<div><img src="images/go_to_the_kitchen.png" /></div>
+<div><img src="images/mind=blown.jpg" /></div>
+<div><img src="images/go_to_the_kitchen.png" /></div>
+<div><img src="images/go_to_the_kitchen_inception.png" /></div>
+<div><img src="images/go_to_the_kitchen_inception_inception.png" /></div>
+<div><img src="images/cause_logic.jpg" /></div>
+<div>okay it's not actually that complicated</div>
+<div><img src="images/go_to_the_kitchen.png" /></div>
+<div>wait...</div>
+<div><img src="images/go_to_the_kitchen.png" /></div>
+<div>it's still basically in plain english</div>
+<div><img src="images/go_to_the_kitchen.png" /></div>
+<div>let's translate</div>
+<div><img src="images/go_to_the_kitchen.png" /></div>
+<div>if i am hungry or i am thirsty</div>
+<div>tell myself to go to the kitchen</div>
+<div><img src="images/go_to_the_kitchen.png" /></div>
+<div><img src="images/success.jpg" /></div>
+<div>well what if we want to tell ourselves different things</div>
+<div>based on if we are <em>either</em> hungry <em>or</em> thirsty?</div>
+<div>well let's say it in plain english first</div>
+<div>if i am hungry, tell myself to go eat</div>
+<div>or if i am thirsty, tell myself to go drink water</div>
+<div><img src="images/mind=blown.jpg" /></div>
+<div>crazy stuff. i know.</div>
+<div>so what would that be in python?</div>
+<div><img src="images/introduce_elif.png" /></div>
+<div>...</div>
+<div><img src="images/lets_think_about_this_logically.jpg" /></div>
+<div><img src="images/introduce_elif.png" /></div>
+<div>well the first part is the same as the first if statement</div>
+<div><img src="images/introduce_elif.png" /></div>
+<div>but <em>elif</em></div>
+<div>what is <em>elif</em>??</div>
+<div><img src="images/how_to_do_stuff.jpg" /></div>
+<div>elif is basically <em>else</em> and <em>if</em> gobbled together</div>
+<div><img src="images/introduce_elif.png" /></div>
+<div>in that case it makes sense!</div>
+<div><img src="images/introduce_elif.png" /></div>
+<div>all this is saying is</div>
+<div>if i_am equals hungry, print go eat</div>
+<div>or if i_am equals thirsty, print go drink water</div>
+<div><img src="images/mind=blown.jpg" /></div>
+<div>let's get fancy now</div>
+<div>what if we threw an <em>else</em> in there?</div>
+<div><img src="images/if_elif_else.png" /></div>
+<div>simple enough</div>
+<div><img src="images/if_elif_else.png" /></div>
+<div>so now</div>
+<div>if i_am does not equal hungry or thirsty it prints "you are neither hungry nor thirsty"</div>
+<div><img src="images/if_elif_else.png" /></div>
+<div>okay</div>
+<div>let's put everything we have learned so far together now</div>
+<div><img src="images/all_the_things.jpg" /></div>
+<div>so we will have two functions</div>
+<div>one called tell_me_what_to_do</div>
+<div><img src="images/tell_me_what_to_do.png" /></div>
+<div>and one called do_it</div>
+<div><img src="images/do_it.png" /></div>
+<div>so tell_me_what_to_do <em>returns</em> stuff</div>
+<div>and do_it <em>prints</em> stuff</div>
+<div>let's see these puppies in action</div>
+<div><img src="images/hungry_what.png" /></div>
+<div><img src="images/do_it_action.png" /></div>
+<div><img src="images/fascinating.jpg" /></div>
+<div>shall we look at the functions again?</div>
+<div><img src="images/tell_me_what_to_do.png" /></div>
+<div><img src="images/do_it.png" /></div>
+<div>cool.</div>
+<div>so we did something</div>
+<div>now what?</div>
+<div>well what if we want to take <em>input</em> from the user?</div>
+<div><img src="images/i_fight_for_the_users.jpg" /></div>
+<div>that's kind of what programming is all about</div>
+<div>taking input from somewhere and doing something with it</div>
+<div>well how can we take input?</div>
+<div><em>input</em></div>
+<div><img src="images/orly.jpg" /></div>
+<div><img src="images/input.png" /></div>
+<div><img src="images/cause_logic.jpg" /></div>
+<div><img src="images/input.png" /></div>
+<div>okay</div>
+<div><img src="images/lets_think_about_this_logically.jpg" /></div>
+<div>remember how to get that little helpful box thing?</div>
+<div><img src="images/random_tooltip.jpg" /></div>
+<div>yeah that thing</div>
+<div>know how to get it?</div>
+<div>that's okay cause i do</div>
+<div><img src="images/input_help.png" /></div>
+<div><img src="images/girl_mind=blown.jpg" /></div>
+<div><img src="images/input_help.png" /></div>
+<div>shh it's talking to me</div>
+<div><img src="images/input_help.png" /></div>
+<div>okay got it</div>
+<div>so to use input</div>
+<div><img src="images/tell_me_something.png" /></div>
+<div><img src="images/mind=blown.jpg" /></div>
+<div><img src="images/tell_me_something.png" /></div>
+<div>it looks like it's waiting for me to type something</div>
+<div><img src="images/tell_me_something.png" /></div>
+<div>okay i'll type something</div>
+<div><img src="images/input_something.png" /></div>
+<div><img src="images/more_awesome_than_a_double_rainbow.jpg" /></div>
+<div><img src="images/input_something.png" /></div>
+<div><img src="images/what_is_this_i_dont_even.jpg" /></div>
+<div>do you know what's happening here?</div>
+<div>so input allows you to type something, and then returns what you type</div>
+<div><img src="images/orly.jpg" /></div>
+<div>you should recall that if something is <em>returned</em> we can save it to a variable</div>
+<div>well let's try it</div>
+<div><img src="images/input_works.png" /></div>
+<div>hey look it works</div>
+<div><img src="images/input_works.png" /></div>
+<div><img src="images/hey_look_theres_a_thing.jpg" /></div>
+<div>okay well that's simple enough</div>
+<div>what if we incorporated this with those functions we made earlier?</div>
+<div><img src="images/tell_me_what_to_do.png" /></div>
+<div><img src="images/do_it.png" /></div>
+<div><img src="images/not_sure_if_stuck_on_repeat_or_trying_to_tell_me_something.jpg" /></div>
+<div>okay so input</div>
+<div>instead of calling tell_me_what_to_do and telling it what we are</div>
+<div>let's use inception</div>
+<div><img src="images/input_inception.png" /></div>
+<div><img src="images/who_are_you_really.jpg" /></div>
+<div><img src="images/input_inception_result.png" /></div>
+<div><img src="images/mind=blown.jpg" /></div>
+<div>well that makes sense</div>
+<div><img src="images/input_inception_result.png" /></div>
+<div>let's add even more inception here</div>
+<div><img src="images/double_input_inception.png" /></div>
+<div><img src="images/what_is_this_i_dont_even.jpg" /></div>
+<div><img src="images/double_inception_result.png" /></div>
+<div><img src="images/girl_mind=blown.jpg" /></div>
+<div><img src="images/double_inception_result.png" /></div>
+<div><img src="images/lets_think_about_this_logically.jpg" /></div>
+<div>see it all works, because</div>
+<div>input returns what you typed, and we send it to tell_me_what_to_do</div>
+<div>then tell_me_what_to_do returns what we should do, which we send to do_it</div>
+<div>do_it finally takes the action and makes us do something</div>
+<div><img src="images/double_inception_result.png" /></div>
+<div><img src="images/success.jpg" /></div>
+<div>so now that you're mind has been reduced to mush</div>
+<div>i'll bend it even more</div>
+<div>just remember</div>
+<div><img src="images/a_spoon.jpg" /></div>
+<div><img src="images/false_there_is_no_spoon.jpg" /></div>
+<div>inception is not the matrix</div>
+<div>so let's talk about <em>loops</em></div>
+<div>what is a loop?</div>
+<div><img src="images/lets_think_about_this_logically.jpg" /></div>
+<div>so a loop is something that repeats</div>
+<div>in programming a loop is a chunk of code that repeats</div>
+<div>it could repeat <em>forever</em></div>
+<div>or it could repeat until a certain <em>condition</em> is met</div>
+<div>or it could repeat a certain <em>number of times</em></div>
+<div>so let's start with looping a given number of times</div>
+<div><em>for</em></div>
+<div><img src="images/for_intro_loop.png" /></div>
+<div>so put on your analytical face</div>
+<div><img src="images/for_intro_loop.png" /></div>
+<div>okay what's going on here?</div>
+<div>a <em>for loop</em> works like this</div>
+<div><em>for</em> variable_name <em>in</em> a_list_of_things</div>
+<div>so what does this mean in the context of the example?</div>
+<div><img src="images/for_intro_loop.png" /></div>
+<div>the variable is <em>i</em></div>
+<div>and the list of things is <em>range(10)</em></div>
+<div>well let's look at <em>range</em></div>
+<div><img src="images/range_10.png" /></div>
+<div>what??</div>
+<div>what happened to it being a <em>list</em>???</div>
+<div>okay let's take a step back and talk about lists quickly</div>
+<div><img src="images/example_list.png" /></div>
+<div>lists can contain essentially anything</div>
+<div>ints, strs, other stuff</div>
+<div>all in the same list</div>
+<div><img src="images/complex_list.png" /></div>
+<div>everything in a list has a <em>position</em></div>
+<div><img src="images/list_positions.png" /></div>
+<div>the positions start at 0, <em>not 1</em>!</div>
+<div>the most important thing to know about lists</div>
+<div>is how to access whatever is at a certain position in the list</div>
+<div><img src="images/list_access.png" /></div>
+<div>the positions are called <em>indexes</em></div>
+<div><img src="images/list_access.png" /></div>
+<div>the <em>index</em> of 'hi' is 1</div>
+<div><img src="images/list_positions.png" /></div>
+<div>okay so now that we know a little about lists</div>
+<div>let's return to the range loopy thing</div>
+<div>so here's our problem</div>
+<div><img src="images/range_10.png" /></div>
+<div>somehow that's supposed to be a list</div>
+<div>well it actually <em>is not</em> a list</div>
+<div>it is a <em>range</em></div>
+<div><img src="images/range_type.png" /></div>
+<div>BUT</div>
+<div><em>ranges</em> are similar to <em>lists</em></div>
+<div><img src="images/range_index.png" /></div>
+<div>what <em>range</em> does is it creates a list</div>
+<div>range(10) creates a list from 0 to 9</div>
+<div><img src="images/print_i.png" /></div>
+<div><em>range</em> is used nearly exclusively for <em>for loops</em></div>
+<div>so before we continue to the other type of loop</div>
+<div>a <em>for loop</em> is used</div>
+<div>to loop through a list of things</div>
+<div><em>for</em> variable_name <em>in</em> a_list_of_things</div>
+<div><img src="images/for_loop_list.png" /></div>
+<div><em>while loops</em>.</div>
+<div>a while loop is similar to a for loop</div>
+<div>because they both loop</div>
+<div><img src="images/mind=blown.jpg" /></div>
+<div>so we could use a <em>while loop</em></div>
+<div>to do the exact same thing as one of the <em>for loop</em> examples</div>
+<div><img src="images/print_i.png" /></div>
+<div><img src="images/while_example.png" /></div>
+<div>so that's a bit more complicated</div>
+<div><em>while loops</em> loop until a certain <em>condition</em> is met</div>
+<div>in this case, the condition is <em>i < 10</em></div>
+<div><img src="images/while_example.png" /></div>
+<div>let's look at a more funner example</div>
+<div><img src="images/ur_silly.jpg" /></div>
+<div><img src="images/while_true.png" /></div>
+<div><img src="images/what_is_this_i_dont_even.jpg" /></div>
+<div><img src="images/while_true.png" /></div>
+<div><img src="images/girl_mind=blown.jpg" /></div>
+<div><img src="images/while_true.png" /></div>
+<div><img src="images/while_true_inception.png" /></div>
+<div><img src="images/false_there_is_no_spoon.jpg" /></div>
+<div>but no really</div>
+<div><img src="images/while_true.png" /></div>
+<div>the only new thing here really is <em>break</em></div>
+<div>break will halt the loop</div>
+<div>so let's type some stuff</div>
+<div><img src="images/the_grim_reaper.png" /></div>
+<div>so it works exactly as expected</div>
+<div><img src="images/while_true.png" /></div>
+<div>if we just type something random</div>
+<div>it will print <em>okay :P</em></div>
+<div>and continue asking us forever</div>
+<div>until we type <em>the grim reaper</em></div>
+<div>then it prints <em>bleh</em> and stops execution (pun not intended)</div>
+<div>so now let's learn about the <em>MATRIX</em></div>
+<div><img src="images/ur_silly.jpg" /></div>
+<div><img src="images/the_matrix.jpg" /></div>
+<div><img src="images/who_are_you_really.jpg" /></div>
+<div><img src="images/hey_look_theres_a_thing.jpg" /></div>
+<div><img src="images/lets_think_about_this_logically.jpg" /></div>
+<div><img src="images/system_failure.jpg" /></div>
+<div><img src="images/all_the_things.jpg" /></div>
+<div><img src="images/oh_no_its_math_class.jpg" /></div>
+<div><img src="images/more_math_stuff.jpg" /></div>
+<div><img src="images/not_sure_if_stuck_on_repeat_or_trying_to_tell_me_something.jpg" /></div>
+<div><img src="images/false_there_is_no_spoon.jpg" /></div>
+<div><img src="images/orly.jpg" /></div>
+<div><img src="images/there_is_no_spoon.jpg" /></div>
+<div><img src="images/girl_mind=blown.jpg" /></div>
+<div><img src="images/what_is_this_i_dont_even.jpg" /></div>
+<div><img src="images/more_awesome_than_a_double_rainbow.jpg" /></div>
+<div><img src="images/cause_logic.jpg" /></div>
+<div><img src="images/mind=blown.jpg" /></div>
+<div><img src="images/fascinating.jpg" /></div>
+<div><img src="images/success.jpg" /></div>
+<div>thank you</div>
+<div>Isaac Grant &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp github: @IsaacJG theisaacjg@gmail.com</div>
